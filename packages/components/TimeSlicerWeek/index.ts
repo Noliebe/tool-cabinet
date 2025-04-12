@@ -1,5 +1,5 @@
 // index.ts
-import TimeSlicerWeek from "./TimeSlicerWeek.vue";
+import cp from "./TimeSlicerWeek.vue";
 import { withInstall } from"../../utils/tool";
-export const BqButton = withInstall(TimeSlicerWeek);
-export default BqButton;
+export const TimeSlicerWeek = withInstall(cp);
+export default TimeSlicerWeek;
