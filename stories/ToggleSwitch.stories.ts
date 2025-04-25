@@ -1,12 +1,12 @@
 import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import FormTangram from "../packages/components/FormTangram";
+import ToggleSwitch from "../packages/components/ToggleSwitch";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "EXAMPLE/FormTangram",
-  component: FormTangram,
+  title: "Foem/ToggleSwitch",
+  component: ToggleSwitch,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   argTypes: {
@@ -18,7 +18,7 @@ const meta = {
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     // onClick: fn(),
   },
-} satisfies Meta<typeof FormTangram>;
+} satisfies Meta<typeof ToggleSwitch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -18,10 +18,10 @@
       />
   </ElSelect>
 </template>
-<script lang="ts" setup name="SelectRemote">
-import { elSelectRemoteProps } from './el-select-remote'
+<script lang="ts" setup name="NZSelectRemote">
 import { defineProps, ref, computed, onMounted } from 'vue'
 import { ElSelect, ElOption } from 'element-plus'
+import { elSelectRemoteProps } from './el-select-remote'
 
 const props = defineProps(elSelectRemoteProps)
 const model = defineModel()
