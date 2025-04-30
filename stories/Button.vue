@@ -1,5 +1,6 @@
 <template>
-  <div class="btn-wrap mt-10">
+  <div class="bb btn-wrap mt-10">
+    <div class="cc">a</div>
     <button type="button" :class="classes" @click="onClick" :style="style">
       {{ label }}
     </button>
@@ -52,7 +53,14 @@ const onClick = () => {
 };
 </script>
 <style lang="scss" scoped>
-.btn-wrap{
+.btn-wrap {
   background-color: red;
+}
+.bb {
+  background-color: red;
+  .cc {
+    background-color: aqua;
+    padding: 30px;
+  }
 }
 </style>
