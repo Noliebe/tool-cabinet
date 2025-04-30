@@ -1,6 +1,6 @@
 <template>
   <div class="bb btn-wrap mt-10">
-    <div class="cc">a</div>
+    <div class="bg-black">a</div>
     <button type="button" :class="classes" @click="onClick" :style="style">
       {{ label }}
     </button>
@@ -58,9 +58,5 @@ const onClick = () => {
 }
 .bb {
   background-color: red;
-  .cc {
-    background-color: aqua;
-    padding: 30px;
-  }
 }
 </style>
