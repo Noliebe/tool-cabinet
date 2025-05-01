@@ -1,6 +1,6 @@
 <template>
-  <div class="bb btn-wrap mt-10">
-    <div class="bg-black">a</div>
+  <div class="btn-wrap">
+    <div class="bg-[#ea3]">a</div>
     <button type="button" :class="classes" @click="onClick" :style="style">
       {{ label }}
     </button>
@@ -53,10 +53,14 @@ const onClick = () => {
 };
 </script>
 <style lang="scss" scoped>
+// @reference "tailwindcss/theme";
+// @config "../../../../tailwind.config.cjs";
+
 .btn-wrap {
+  @apply p-10;
   background-color: red;
 }
-.bb {
-  background-color: red;
-}
+// .bb {
+//   background-color: red;
+// }
 </style>
