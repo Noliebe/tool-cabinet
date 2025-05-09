@@ -18,7 +18,6 @@
 
 <script lang="ts" setup>
 import { computed } from "vue";
-import { ElFormItem, ElDatePicker } from "element-plus";
 import { timeFormat } from "../utils";
 
 const model = defineModel<Date>();
@@ -49,6 +48,9 @@ const weekRangeFormat = computed(() => {
 </script>
 
 <style scoped>
+@reference "tailwindcss/theme";
+@config "../../../tailwind.config.js";
+
 .relative {
   position: relative;
 }
