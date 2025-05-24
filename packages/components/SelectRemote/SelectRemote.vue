@@ -19,7 +19,7 @@
   </ElSelect>
 </template>
 <script lang="ts" setup name="NZSelectRemote">
-import { defineProps, ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { ElSelect, ElOption } from 'element-plus'
 import { elSelectRemoteProps } from './el-select-remote'
 
