@@ -49,3 +49,21 @@ export const timeFormat = (dateTime: number, fmt = "yyyy-mm-dd") => {
   }
   return fmt;
 };
+
+/** 是否图片格式
+ * @param {Object} value
+ */
+export function testImage(value: string) {
+    const newValue = value.split('?')[0]
+    const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i
+    return IMAGE_REGEXP.test(newValue)
+}
+
+/**
+ * 是否视频格式
+ * @param {Object} value
+ */
+export function testVideo(value: string) {
+    const VIDEO_REGEXP = /\.(mp4|mpg|mpeg|dat|asf|avi|rm|rmvb|mov|wmv|flv|mkv|m3u8)/i
+    return VIDEO_REGEXP.test(value)
+}
