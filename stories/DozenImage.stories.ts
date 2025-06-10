@@ -1,23 +1,16 @@
 import { fn } from "@storybook/test";
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import ElWeekRange from "../packages/components/ElWeekRange";
+import DozenImage from "../packages/components/DozenImage";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "Example/ElWeekRange | 周选择",
-  component: ElWeekRange,
+  title: "Example/DozenImage | 一打图片",
+  component: DozenImage,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  argTypes: {
-    // size: { control: "select", options: ["small", "medium", "large"] },
-    // backgroundColor: { control: "color" },
-    modelValue: {},
-  },
-  args: {
-    modelValue: new Date(),
-  },
-} satisfies Meta<typeof ElWeekRange>;
+  argTypes: {},
+} satisfies Meta<typeof DozenImage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -28,6 +21,12 @@ type Story = StoryObj<typeof meta>;
  */
 export const Primary: Story = {
   args: {
-    modelValue: undefined,
+    list: ["/img-a.jpg", "/img-b.png", "/img-c.jpg"],
+  },
+};
+
+export const moreThen: Story = {
+  args: {
+    list: ["/img-a.jpg"],
   },
 };

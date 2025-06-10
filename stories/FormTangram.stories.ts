@@ -5,7 +5,7 @@ import FormTangram from "../packages/components/FormTangram";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "EXAMPLE/FormTangram",
+  title: "FORM/FormTangram",
   component: FormTangram,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],

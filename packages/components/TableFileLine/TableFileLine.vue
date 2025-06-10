@@ -82,10 +82,10 @@
             </template>
           </el-table-column>
           <!-- <el-table-column label="项目/厅" prop="projects_name" show-overflow-tooltip>
-                        <template #default="{ row }">
-                            <span> {{ row.ProjectsHall_data.join(',') }}</span>
-                        </template>
-                    </el-table-column> -->
+              <template #default="{ row }">
+                  <span> {{ row.ProjectsHall_data.join(',') }}</span>
+              </template>
+          </el-table-column> -->
           <el-table-column
             label="申报内容"
             prop="content"

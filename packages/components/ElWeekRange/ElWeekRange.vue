@@ -1,10 +1,11 @@
 <template>
-  <ElFormItem label="食谱时间" prop="week_end_time" class="relative">
+  <ElFormItem label="食谱时间" prop="week_end_time">
     <ElDatePicker
-      class="!w-full"
+      v-bind="$attrs"
+      class="!w-full relative"
       type="week"
       v-model="model"
-      placeholder="请选择时间周期"
+      clearable
     />
     <!-- @change="handleWeekChange" -->
     <div class="dtate-picker-content-box">
@@ -20,7 +21,9 @@
 import { computed } from "vue";
 import { timeFormat } from "../utils";
 
-const model = defineModel<Date>();
+// const model = defineModel<Date>();
+
+const emit = defineEmits(['update:modelValue'])
 
 const props = withDefaults(
   defineProps<{
@@ -32,11 +35,16 @@ const props = withDefaults(
   { modelValue: undefined }
 );
 
+const model = computed({
+    get: () => props.modelValue,
+    set: (nV) => emit('update:modelValue', nV)
+})
+
 const weekRangeFormat = computed(() => {
   const d = {
-    start: "",
+    start: "开始时间",
     join: "~",
-    end: "",
+    end: "结束时间",
   };
   if (model.value) {
     d.start = timeFormat(model.value.getTime(), "yyyy-mm-dd");
