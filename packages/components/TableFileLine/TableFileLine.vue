@@ -64,7 +64,11 @@
                         v-else-if="item.type === 'video'"
                         class="list-img-item flex items-center justify-center p-5"
                       >
-                        视频:{{ item.url }}
+                        <!-- 视频:{{ item.url }} -->
+                        <video
+                            class="list-img-item"
+                            :src="item.url"
+                        ></video>
                       </div>
                       <div
                         v-else-if="item.type === 'other'"
@@ -191,26 +195,6 @@ const queryParams = reactive({
   PH_ids: undefined,
 });
 
-//项目/厅选择
-const handleSelectPH = (nV: string[]) => {
-  queryParams.projects_id = nV ? nV[0] : "";
-  queryParams.hall_id = nV ? nV[1] : "";
-};
-
-// 初始化数据
-const renameTreeKeys = (data: any[]) => {
-  return data.map((item) => {
-    const newItem = {
-      value: item.id,
-      label: item.name,
-    };
-    if (item.children && Array.isArray(item.children)) {
-      newItem.children = renameTreeKeys(item.children); // 递归处理子节点
-    }
-    return newItem;
-  });
-};
-
 // 选中数据
 const selectData = ref<any[]>([]);
 
@@ -218,9 +202,6 @@ const selectData = ref<any[]>([]);
 const handleSelectionChange = (val: any[]) => {
   selectData.value = val.map(({ id }) => id);
 };
-
-// 获取字典数据
-const { dictData } = useDictData("");
 
 /**
  * 自定义合并方法

@@ -57,13 +57,25 @@ export function usePaging(options: Options) {
         pager.page = 1
         getLists()
     }
-    // 重置参数
-    const resetParams = () => {
-        Object.keys(paramsInit).forEach((item) => {
-            params[item] = paramsInit[item]
+
+    /**
+     * 重置参数并触发列表刷新
+     * @description 合并初始参数与传入参数，更新到全局参数对象后重新获取列表数据
+     * @param {Record<string, any>} arg - 需要更新的参数对象，会自动与初始参数合并
+     * @example
+     * // 基本用法
+     * resetParams({ page: 2, keyword: 'vue' });
+     *
+     * // 会合并为：{ ...paramsInit, page: 2, keyword: 'vue' }
+     */
+    const resetParams = (arg?: Record<string, any>): void => {
+        const argData = { ...paramsInit, ...arg }
+        Object.keys(argData).forEach((item) => {
+            params[item] = argData[item]
         })
         getLists()
     }
+
     return {
         pager,
         getLists,
